@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escribe el Tweet</title>
+</head>
+<body>
+    <form action="/usuario/tweet/<%=  %>" method="POST">
+        <h1>Nuevo Tweet</h1>
+        <article>
+            <label for="tweet">Escribe tu tweet :</label>
+            <textarea name="tweet" id="tweet" placeholder="Escribir ..."><%= locals && locals.old ? old.tweet : '' %></textarea>    
+        </article>
+        <article>
+            <% if(locals && locals.errors) { %>
+            <% errors.forEach( error => { %>
+            <p style="color: red"><%= error.msg %></p><br>
+            <% } ) %>
+            <% } %>
+        </article>  
+        <button type="submit">Twittear</button>
+    </form>
+    <% if(locals && locals.tweets) { %>
+    <h2>Tweets de <%= name %></h2>    
+    <% for(let i = tweets.length; i > 0; i--) { %>
+    <p><%= tweets[i - 1].nombreRelacion.campoQueTieneElTweet %></p><br> <!-- Del tweet más actual al más antiguo-->
+    <% } %>
+    <% } %>
+</body>
+</html>
