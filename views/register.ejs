@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+    
+<body>
+    <div>
+        <h2>Registrar</h2>
+        <form action="/register" method="POST">
+            <h2>Completa los datos:</h2>
+            <br>
+            <label for="first_name">
+                <p><span>*</span>Nombre:</p>
+                <input id="first_name" type="text" name="first_name" required>
+            </label>
+            <label for="last_name">
+                <p><span>*</span>Apellido:</p>
+                <input id="last_name" type="text" name="last_name" required>
+            </label>
+            <label for="signup-email">
+                <p><span>*</span>E-Mail:</p>
+                <input id="signup-email" type="email" name="user" required>
+            </label>
+            <label for="signup-password">
+                <p><span>*</span>Contraseña:</p>
+                <input id="password" type="password" name="password" required>
+            </label>
+            <button type="submit">Crear Cuenta</button>
+        </form>
+    </div>
+</body>
+</html>
